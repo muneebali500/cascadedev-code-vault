@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 60-Second Challenge: sibling-index() & sibling-count() | CascadeDev</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 20%, #0F172A, #020617);
+      color: #F8FAFC;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      border-radius: 24px;
+      padding: 36px 40px;
+      max-width: 860px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1.5px solid #F59E0B;
+      color: #FBBF24;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      color: #94A3B8;
+      font-size: 16px;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+
+    /* Container for the 7 sibling bars */
+    .visualizer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 16px;
+      height: 280px;
+      background: rgba(2, 6, 23, 0.75);
+      border: 1px dashed rgba(148, 163, 184, 0.3);
+      border-radius: 18px;
+      padding: 24px 30px;
+      margin-bottom: 32px;
+    }
+
+    .bar {
+      flex: 1;
+      max-width: 72px;
+      border-radius: 12px 12px 4px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 12px;
+      font-weight: 900;
+      font-size: 16px;
+      color: #070B14;
+      transition: all 0.3s ease;
+      background: linear-gradient(180deg, #38BDF8, #818CF8);
+
+      /* ============================================================ */
+      /* 🎯 60-SECOND VIEWER CODING CHALLENGE:                       */
+      /* Replace the static height below with a 1-line calc() formula */
+      /* using sibling-index() and sibling-count() so that the middle */
+      /* bar is the tallest and edges taper down symmetrically!       */
+      /* ============================================================ */
+      height: 120px; /* TODO: Replace this line with your solution */
+    }
+
+    .instructions {
+      text-align: left;
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #CBD5E1;
+    }
+
+    .instructions code {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      background: rgba(15, 23, 42, 0.9);
+      color: #FDE047;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 15px;
+      color: #94A3B8;
+    }
+
+    .cta-box a {
+      color: #38BDF8;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .cta-box a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">🎯 60-Second Challenge</div>
+    <h1>The Middle Peak Formula</h1>
+    <p class="subtitle">
+      Can you write a single CSS <code>calc()</code> rule to make the middle sibling tallest without any JavaScript?
+    </p>
+
+    <!-- 7 Sibling Bars -->
+    <div class="visualizer">
+      <div class="bar">1</div>
+      <div class="bar">2</div>
+      <div class="bar">3</div>
+      <div class="bar">4</div>
+      <div class="bar">5</div>
+      <div class="bar">6</div>
+      <div class="bar">7</div>
+    </div>
+
+    <div class="instructions">
+      <strong>Your Mission:</strong>
+      <ol style="margin-left: 20px; margin-top: 8px;">
+        <li>Open the DevTools (or edit the <code>&lt;style&gt;</code> block) in this file.</li>
+        <li>Find the <code>.bar</code> rule and replace <code>height: 120px;</code> with your 1-line formula using <code>sibling-index()</code> and <code>sibling-count()</code>.</li>
+        <li>Test it: bar #4 should be the tallest, with bars tapering symmetrically toward both edges!</li>
+        <li>Once it works, drop your 1-line formula in the YouTube comments under Episode 01!</li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <span>📺 Tutorial: <strong>Modern CSS Series</strong></span>
+      <span>🏆 Top 3 solutions in the YouTube comments get pinned &amp; added to the Hall of Fame!</span>
+    </div>
+  </div>
+</body>
+</html>
