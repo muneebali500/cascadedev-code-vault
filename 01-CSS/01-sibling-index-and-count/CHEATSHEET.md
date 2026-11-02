@@ -1,6 +1,6 @@
 # Modern CSS Cheat Sheet: `sibling-index()` & `sibling-count()`
-> **Channel**: CascadeDev (`@cascadedev` • `https://www.youtube.com/@cascadedev`) • **Episode**: 01 (Modern CSS Series)  
-> **GitHub Code Vault**: `https://github.com/muneebali500`  
+> **Channel**: CascadeDev (`@cascadedev`) • **Video**: [▶️ Watch Episode 01](https://youtu.be/qMdy7NDZnRk)  
+> **GitHub Code Vault**: [github.com/muneebali500/cascadedev-code-vault](https://github.com/muneebali500/cascadedev-code-vault)  
 > **Browser Compatibility**: Chrome & Edge 138+ ✅ | Safari 18.4+ ⚡ | Firefox In Active Development 🔧
 
 ---
