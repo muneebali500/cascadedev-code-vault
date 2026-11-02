@@ -15,7 +15,7 @@
 | Episode | Title & Topic | Core Modern Features | Cheat Sheet | 60-Sec Challenge | Video Deep-Dive |
 | :---: | :--- | :--- | :---: | :---: | :---: |
 | **01** | **CSS Sibling Index & Count**<br>*Automatic Staggered Delays & Dynamic Grids* | `sibling-index()`, `sibling-count()`, `calc()`, dynamic OKLCH | [📖 Cheat Sheet](./01-CSS/01-sibling-index-and-count/CHEATSHEET.md) | [🎯 Starter Code](./01-CSS/01-sibling-index-and-count/starter-challenge.html) | [▶️ Watch Episode 01](https://www.youtube.com/@cascadedev) |
-| **02** | **Smooth Display & Dialog Transitions**<br>*Native Entry & Exit Transitions with Zero JS* | `@starting-style`, `allow-discrete`, `::backdrop`, `<dialog>` | [📖 Cheat Sheet](./01-CSS/02-starting-style/CHEATSHEET.md) | [🎯 Starter Code](./01-CSS/02-starting-style/starter-challenge.html) | [▶️ Watch Episode 02](https://www.youtube.com/@cascadedev) |
+| **02** | **Smooth Display & Dialog Transitions**<br>*Native Entry & Exit Transitions with Zero JS* | `@starting-style`, `allow-discrete`, `::backdrop`, `<dialog>` | *⏳ Dropping in 48h* | *⏳ Dropping in 48h* | *⏳ Premiering Soon* |
 
 ---
 
@@ -25,13 +25,11 @@ Every episode ends with a **60-Second Viewer Coding Challenge**. Viewers submit 
 The top 3 cleanest, most elegant solutions are pinned under the video and permanently honored in this Hall of Fame leaderboard!
 
 | Episode | Challenge Name | Rank | Community Champion | Winning Solution Highlight |
-| :---: | :--- | :---: | :--- | :--- |
+| :---: | :--- | :--- | :--- | :--- |
 | **01** | The Middle Peak Formula | 🥇 Gold | *Reserved for Top Commenter* | *Symmetrical peak formula using `sibling-index()`* |
 | **01** | The Middle Peak Formula | 🥈 Silver | *Reserved for Top Commenter* | *Inverse distance calc() implementation* |
 | **01** | The Middle Peak Formula | 🥉 Bronze | *Reserved for Top Commenter* | *Creative OKLCH + height taper variation* |
-| **02** | The Asymmetric Modal Transition | 🥇 Gold | *Reserved for Top Commenter* | *Clean asymmetric entry scale + slide-down exit* |
-| **02** | The Asymmetric Modal Transition | 🥈 Silver | *Reserved for Top Commenter* | *Zero-JS backdrop blur with discrete display timing* |
-| **02** | The Asymmetric Modal Transition | 🥉 Bronze | *Reserved for Top Commenter* | *Compact single-declaration transition shorthand* |
+| **02** | The Asymmetric Modal Transition | ⏳ | *Opens upon Episode 02 release* | *Drops this week* |
 
 ### 🚀 How to Enter the Hall of Fame
 1. **Grab the Starter Challenge**: Open the episode's `starter-challenge.html` directly in your browser or paste the markup into CodePen / PlayCode.
@@ -56,11 +54,7 @@ cascadedev-code-vault/
 ├── README.md
 ├── .gitignore
 └── 01-CSS/
-    ├── 01-sibling-index-and-count/
-    │   ├── cheat-sheet.png          # High-resolution 1920x1080 visual cheat sheet
-    │   ├── CHEATSHEET.md            # Complete printable pattern guide & mental models
-    │   └── starter-challenge.html   # Standalone HTML testbed (zero spoiler comments)
-    └── 02-starting-style/
+    └── 01-sibling-index-and-count/
         ├── cheat-sheet.png          # High-resolution 1920x1080 visual cheat sheet
         ├── CHEATSHEET.md            # Complete printable pattern guide & mental models
         └── starter-challenge.html   # Standalone HTML testbed (zero spoiler comments)
