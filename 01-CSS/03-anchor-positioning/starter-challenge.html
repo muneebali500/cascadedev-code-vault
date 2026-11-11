@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 60-Second Challenge: Anchor Positioning Corner Badge | CascadeDev</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 20%, #0F172A, #020617);
+      color: #F8FAFC;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 20px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+      border-radius: 24px;
+      padding: 36px 40px;
+      max-width: 880px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1.5px solid #F59E0B;
+      color: #FBBF24;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 900;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    p.subtitle {
+      color: #94A3B8;
+      font-size: 16px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .pos-btn {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #E2E8F0;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pos-btn:hover {
+      background: rgba(56, 189, 248, 0.2);
+      border-color: #38BDF8;
+      color: #FFFFFF;
+    }
+
+    /* Scrollable / Bounded Arena for Testing Collision Flipping */
+    .arena {
+      position: relative;
+      height: 290px;
+      background: rgba(2, 6, 23, 0.85);
+      border: 2px dashed rgba(148, 163, 184, 0.35);
+      border-radius: 18px;
+      padding: 18px;
+      margin-bottom: 28px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .inbox-btn {
+      padding: 16px 28px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #0284C7, #2563EB);
+      color: #FFFFFF;
+      font-size: 17px;
+      font-weight: 800;
+      border: 2px solid #38BDF8;
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* ============================================================ */
+      /* 🎯 STEP 1 (TODO): Register this button as a named CSS anchor */
+      /* ============================================================ */
+    }
+
+    /* Note: The badge is a separate sibling in the DOM (not nested inside the button!) */
+    .corner-badge {
+      position: fixed;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #F43F5E, #E11D48);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      border: 2px solid #FFE4E6;
+      box-shadow: 0 8px 20px rgba(244, 63, 94, 0.45);
+      white-space: nowrap;
+      pointer-events: none;
+
+      /* ============================================================ */
+      /* 🎯 STEP 2 (TODO):                                            */
+      /* 1. Tether .corner-badge to your button's anchor name         */
+      /* 2. Position it overlapping the button's TOP-RIGHT corner     */
+      /*    (e.g., 6px above top edge, 10px past right edge)          */
+      /* 3. Add a 1-line fallback rule so it flips automatically on   */
+      /*    both block and inline axes when pushed to viewport edges! */
+      /* ============================================================ */
+    }
+
+    .instructions {
+      text-align: left;
+      background: rgba(30, 41, 59, 0.6);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #CBD5E1;
+    }
+
+    .instructions code {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      background: rgba(15, 23, 42, 0.9);
+      color: #FDE047;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 15px;
+      color: #94A3B8;
+    }
+
+    .cta-box a {
+      color: #38BDF8;
+      text-decoration: none;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">🎯 60-Second Challenge</div>
+    <h1>The Auto-Flipping Corner Badge</h1>
+    <p class="subtitle">
+      Can you tether a floating notification badge to the button's top-right corner and make it auto-flip at screen edges using pure CSS?
+    </p>
+
+    <div class="controls">
+      <button class="pos-btn" onclick="moveButton('center')">🎯 Center</button>
+      <button class="pos-btn" onclick="moveButton('top-right')">↗️ Push to Top-Right Viewport Edge</button>
+      <button class="pos-btn" onclick="moveButton('top-left')">↖️ Push to Top-Left Viewport Edge</button>
+      <button class="pos-btn" onclick="moveButton('bottom-right')">↘️ Push to Bottom-Right Edge</button>
+    </div>
+
+    <div class="arena" id="arena">
+      <button class="inbox-btn" id="targetBtn">📬 Developer Inbox</button>
+      <div class="corner-badge">🔥 12 New PRs</div>
+    </div>
+
+    <div class="instructions">
+      <strong>Your Mission:</strong>
+      <ol style="margin-left: 20px; margin-top: 8px;">
+        <li>Notice that <code>.inbox-btn</code> and <code>.corner-badge</code> are separate elements in the DOM.</li>
+        <li>Edit the <code>&lt;style&gt;</code> block above so <code>.corner-badge</code> tethers to the <strong>top-right corner</strong> of <code>.inbox-btn</code>.</li>
+        <li>Add collision fallback properties so clicking the <strong>Push to Top-Right Viewport Edge</strong> button flips the badge inward automatically!</li>
+        <li>Drop your CSS solution in the YouTube comments! 🏆 <strong>The top 3 solutions will be pinned below and featured in our Community Hall of Fame!</strong></li>
+      </ol>
+    </div>
+
+    <div class="cta-box">
+      <span>📺 Channel: <a href="https://www.youtube.com/@cascadedev" target="_blank">CascadeDev (@cascadedev)</a></span>
+      <span>⭐ <a href="https://github.com/muneebali500/cascadedev-code-vault" target="_blank">GitHub Code Vault</a></span>
+    </div>
+  </div>
+
+  <script>
+    // Helper ONLY for testing viewport edge collisions ( moves the button to viewport corners )
+    function moveButton(pos) {
+      const btn = document.getElementById('targetBtn');
+      btn.style.position = pos === 'center' ? 'static' : 'fixed';
+      btn.style.top = '';
+      btn.style.bottom = '';
+      btn.style.left = '';
+      btn.style.right = '';
+      btn.style.zIndex = '50';
+
+      if (pos === 'top-right') {
+        btn.style.top = '8px';
+        btn.style.right = '8px';
+      } else if (pos === 'top-left') {
+        btn.style.top = '8px';
+        btn.style.left = '8px';
+      } else if (pos === 'bottom-right') {
+        btn.style.bottom = '8px';
+        btn.style.right = '8px';
+      }
+    }
+  </script>
+</body>
+</html>
