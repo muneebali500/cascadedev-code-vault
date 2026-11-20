@@ -2,7 +2,7 @@
 
 > **CascadeDev (`@cascadedev`) • Modern CSS Episode 04 (Version 3)**  
 > GitHub Code Vault: [github.com/muneebali500/cascadedev-code-vault](https://github.com/muneebali500/cascadedev-code-vault)  
-> Video Tutorial: Native CSS `@function`, `if()` & Type Safety Tutorial (Zero Sass / Zero JavaScript)
+> **Video Tutorial**: [Watch Episode 04 on YouTube](https://www.youtube.com/watch?v=2yylRtaRd2M)
 
 ---
 

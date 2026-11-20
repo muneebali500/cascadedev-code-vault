@@ -1,5 +1,6 @@
 # Modern CSS Cheat Sheet: Anchor Positioning (`anchor()`, `position-anchor`, `position-try-fallbacks`, `@position-try`)
 > **Channel**: CascadeDev (`@cascadedev` • `https://www.youtube.com/@cascadedev`)  
+> **Video Tutorial**: [Watch Episode 03 on YouTube](https://www.youtube.com/watch?v=MJsWpy84_30)  
 > **GitHub Code Vault**: [github.com/muneebali500/cascadedev-code-vault](https://github.com/muneebali500/cascadedev-code-vault)  
 > **Browser Compatibility**: Chrome & Edge 125+ ✅ | Safari 26+ ⚡ | Firefox In Active Development 🔧 (+ `@oddbird/css-anchor-positioning` Polyfill)
 
