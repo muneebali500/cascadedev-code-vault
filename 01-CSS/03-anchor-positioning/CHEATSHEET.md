@@ -147,6 +147,6 @@ Always provide a clean baseline fallback and wrap anchor positioning inside `@su
 > **How to submit**:
 > 1. Open `starter-challenge.html` in your browser or CodePen.
 > 2. Write your CSS rules inside the `TODO` block of `.inbox-btn` and `.corner-badge`.
-> 3. Drag the button into all 4 corners of the preview box to verify it flips cleanly!
+> 3. Click the preset edge buttons to push `.inbox-btn` into the corners of the dashed preview box and verify `.corner-badge` auto-flips cleanly!
 > 4. Drop your CSS snippet in the YouTube comments!
 > 5. 🏆 **Community Hall of Fame**: The top 3 cleanest solutions will be pinned below the video and featured in our Community Hall of Fame!

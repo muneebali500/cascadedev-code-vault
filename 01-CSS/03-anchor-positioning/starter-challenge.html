@@ -91,19 +91,31 @@
       color: #FFFFFF;
     }
 
-    /* Scrollable / Bounded Arena for Testing Collision Flipping */
+    .pos-btn.active {
+      background: rgba(56, 189, 248, 0.25);
+      border-color: #38BDF8;
+      color: #FFFFFF;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.35);
+    }
+
+    /* Bounded Stage Box: Establishes containing block for fixed/positioned overlays
+       so edge buttons and corner badges collide right at the dashed walls! */
     .arena {
       position: relative;
       height: 290px;
+      width: 100%;
       background: rgba(2, 6, 23, 0.85);
       border: 2px dashed rgba(148, 163, 184, 0.35);
       border-radius: 18px;
       padding: 18px;
       margin-bottom: 28px;
       overflow: hidden;
+      transform: translateZ(0);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 16px;
     }
 
     .inbox-btn {
@@ -116,7 +128,7 @@
       border: 2px solid #38BDF8;
       box-shadow: 0 12px 28px rgba(37, 99, 235, 0.4);
       cursor: pointer;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: background 0.2s ease, box-shadow 0.2s ease;
 
       /* ============================================================ */
       /* 🎯 STEP 1 (TODO): Register this button as a named CSS anchor */
@@ -125,7 +137,7 @@
 
     /* Note: The badge is a separate sibling in the DOM (not nested inside the button!) */
     .corner-badge {
-      position: fixed;
+      z-index: 60;
       padding: 6px 14px;
       border-radius: 999px;
       background: linear-gradient(135deg, #F43F5E, #E11D48);
@@ -140,11 +152,11 @@
 
       /* ============================================================ */
       /* 🎯 STEP 2 (TODO):                                            */
-      /* 1. Tether .corner-badge to your button's anchor name         */
+      /* 1. Add position: fixed; and tether to your anchor name       */
       /* 2. Position it overlapping the button's TOP-RIGHT corner     */
-      /*    (e.g., 6px above top edge, 10px past right edge)          */
+      /*    (e.g., 8px into top edge, 12px into right edge)           */
       /* 3. Add a 1-line fallback rule so it flips automatically on   */
-      /*    both block and inline axes when pushed to viewport edges! */
+      /*    both block and inline axes at stage box edges!            */
       /* ============================================================ */
     }
 
@@ -195,10 +207,10 @@
     </p>
 
     <div class="controls">
-      <button class="pos-btn" onclick="moveButton('center')">🎯 Center</button>
-      <button class="pos-btn" onclick="moveButton('top-right')">↗️ Push to Top-Right Viewport Edge</button>
-      <button class="pos-btn" onclick="moveButton('top-left')">↖️ Push to Top-Left Viewport Edge</button>
-      <button class="pos-btn" onclick="moveButton('bottom-right')">↘️ Push to Bottom-Right Edge</button>
+      <button class="pos-btn active" onclick="moveButton('center', this)">🎯 Center</button>
+      <button class="pos-btn" onclick="moveButton('top-right', this)">↗️ Push to Top-Right Edge</button>
+      <button class="pos-btn" onclick="moveButton('top-left', this)">↖️ Push to Top-Left Edge</button>
+      <button class="pos-btn" onclick="moveButton('bottom-right', this)">↘️ Push to Bottom-Right Edge</button>
     </div>
 
     <div class="arena" id="arena">
@@ -211,7 +223,7 @@
       <ol style="margin-left: 20px; margin-top: 8px;">
         <li>Notice that <code>.inbox-btn</code> and <code>.corner-badge</code> are separate elements in the DOM.</li>
         <li>Edit the <code>&lt;style&gt;</code> block above so <code>.corner-badge</code> tethers to the <strong>top-right corner</strong> of <code>.inbox-btn</code>.</li>
-        <li>Add collision fallback properties so clicking the <strong>Push to Top-Right Viewport Edge</strong> button flips the badge inward automatically!</li>
+        <li>Add collision fallback properties so clicking the <strong>Push to Top-Right Edge</strong> button flips the badge inward automatically inside the dashed box!</li>
         <li>Drop your CSS solution in the YouTube comments! 🏆 <strong>The top 3 solutions will be pinned below and featured in our Community Hall of Fame!</strong></li>
       </ol>
     </div>
@@ -223,10 +235,13 @@
   </div>
 
   <script>
-    // Helper ONLY for testing viewport edge collisions ( moves the button to viewport corners )
-    function moveButton(pos) {
+    // Moves the anchor button cleanly inside the bounded dashed .arena container
+    function moveButton(pos, activeBtn) {
+      document.querySelectorAll('.pos-btn').forEach(b => b.classList.remove('active'));
+      if (activeBtn) activeBtn.classList.add('active');
+
       const btn = document.getElementById('targetBtn');
-      btn.style.position = pos === 'center' ? 'static' : 'fixed';
+      btn.style.position = pos === 'center' ? '' : 'fixed';
       btn.style.top = '';
       btn.style.bottom = '';
       btn.style.left = '';
@@ -234,14 +249,14 @@
       btn.style.zIndex = '50';
 
       if (pos === 'top-right') {
-        btn.style.top = '8px';
-        btn.style.right = '8px';
+        btn.style.top = '12px';
+        btn.style.right = '12px';
       } else if (pos === 'top-left') {
-        btn.style.top = '8px';
-        btn.style.left = '8px';
+        btn.style.top = '12px';
+        btn.style.left = '12px';
       } else if (pos === 'bottom-right') {
-        btn.style.bottom = '8px';
-        btn.style.right = '8px';
+        btn.style.bottom = '12px';
+        btn.style.right = '12px';
       }
     }
   </script>

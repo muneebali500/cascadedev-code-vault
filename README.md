@@ -17,6 +17,7 @@
 | **01** | **CSS Sibling Index & Count**<br>*Automatic Staggered Delays & Dynamic Grids* | `sibling-index()`, `sibling-count()`, `calc()`, dynamic OKLCH | [📖 Cheat Sheet](./01-CSS/01-sibling-index-and-count/CHEATSHEET.md) | [🎯 Starter Code](./01-CSS/01-sibling-index-and-count/starter-challenge.html) | [▶️ Watch Episode 01](https://youtu.be/qMdy7NDZnRk) |
 | **02** | **Animate display: none in Pure CSS!**<br>*Modern @starting-style & allow-discrete Explained* | `@starting-style`, `allow-discrete`, `::backdrop`, `dialog` | [📖 Cheat Sheet](./01-CSS/02-starting-style/CHEATSHEET.md) | [🎯 Starter Code](./01-CSS/02-starting-style/starter-challenge.html) | [▶️ Watch Episode 02](https://youtu.be/ObW27UMttsg) |
 | **03** | **CSS Anchor Positioning Explained**<br>*anchor() & position-try (Goodbye Floating UI!)* | `anchor-name`, `position-anchor`, `anchor()`, `flip-block`, `popover` | [📖 Cheat Sheet](./01-CSS/03-anchor-positioning/CHEATSHEET.md) | [🎯 Starter Code](./01-CSS/03-anchor-positioning/starter-challenge.html) | [▶️ Watch on @cascadedev](https://www.youtube.com/@cascadedev) |
+| **04** | **CSS Has Real Functions & if() Now!**<br>*Native @function & Inline if() (Zero Sass!)* | `@function`, `result:`, `if()`, type safety (`<color>`, `<length>`), `@supports` | [📖 Cheat Sheet](./01-CSS/04-css-function-and-if/CHEATSHEET.md) | [🎯 Starter Code](./01-CSS/04-css-function-and-if/starter-challenge.html) | [▶️ Watch Episode 04](https://www.youtube.com/@cascadedev) |
 
 ---
 
@@ -36,6 +37,9 @@ The top 3 cleanest, most elegant solutions are pinned under the video and perman
 | **03** | The Auto-Flipping Corner Badge | 🥇 Gold | *Reserved for Top Commenter* | *Pure CSS corner tether + dual-axis auto-flip* |
 | **03** | The Auto-Flipping Corner Badge | 🥈 Silver | *Reserved for Top Commenter* | *anchor-name + position-try-fallbacks shorthand* |
 | **03** | The Auto-Flipping Corner Badge | 🥉 Bronze | *Reserved for Top Commenter* | *Clean inset: auto + popover corner badge* |
+| **04** | Dynamic 3D Card Elevation | 🥇 Gold | *Reserved for Top Commenter* | *Pure CSS @function --elevation() formula* |
+| **04** | Dynamic 3D Card Elevation | 🥈 Silver | *Reserved for Top Commenter* | *Multi-layer glowing shadow calculation* |
+| **04** | Dynamic 3D Card Elevation | 🥉 Bronze | *Reserved for Top Commenter* | *Progressive enhancement @supports variation* |
 
 ### 🚀 How to Enter the Hall of Fame
 1. **Grab the Starter Challenge**: Open the episode's `starter-challenge.html` directly in your browser or paste the markup into CodePen / PlayCode.
@@ -68,7 +72,11 @@ cascadedev-code-vault/
     │   ├── cheat-sheet.png          # High-resolution 1920x1080 visual cheat sheet
     │   ├── CHEATSHEET.md            # Complete printable pattern guide & mental models
     │   └── starter-challenge.html   # Standalone HTML testbed (zero spoiler comments)
-    └── 03-anchor-positioning/
+    ├── 03-anchor-positioning/
+    │   ├── cheat-sheet.png          # High-resolution 1920x1080 visual cheat sheet
+    │   ├── CHEATSHEET.md            # Complete printable pattern guide & mental models
+    │   └── starter-challenge.html   # Standalone HTML testbed (zero spoiler comments)
+    └── 04-css-function-and-if/
         ├── cheat-sheet.png          # High-resolution 1920x1080 visual cheat sheet
         ├── CHEATSHEET.md            # Complete printable pattern guide & mental models
         └── starter-challenge.html   # Standalone HTML testbed (zero spoiler comments)
